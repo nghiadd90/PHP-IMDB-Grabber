@@ -814,8 +814,8 @@ class IMDB
         if (true === $this->isReady) {
             $sMatch = IMDBHelper::matchRegex($this->sSource, self::IMDB_POSTER, 1);
             if (false !== $sMatch) {
-                if ('big' === strtolower($sSize) && false !== strstr($sMatch, '@._')) {
-                    $sMatch = substr($sMatch, 0, strpos($sMatch, '@._')) . '@.jpg';
+                if ('big' === strtolower($sSize) && false !== strstr($sMatch, '._')) {
+                    $sMatch = substr($sMatch, 0, strpos($sMatch, '._')) . '.jpg';
                 }
                 if (false === $bDownload) {
                     return IMDBHelper::cleanString($sMatch);
